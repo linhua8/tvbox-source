@@ -30,15 +30,6 @@
       "changeable": 0
     },
     {
-      "key": "WexAiYueYue",
-      "name": "💥闪电┃秒播💥",
-      "type": 3,
-      "api": "csp_WexAiYueYueGuard",
-      "searchable": 1,
-      "quickSearch": 1,
-      "changeable": 0
-    },
-    {
       "key": "WexAiWenCai",
       "name": "💥文才┃秒播💥",
       "type": 3,

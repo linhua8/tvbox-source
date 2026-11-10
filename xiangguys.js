@@ -19,7 +19,11 @@ const CLASSES = [
 
 function get(url) {
   const r = req(url, { headers: { 'User-Agent': UA }, timeout: 20000 });
-  return (r && r.content) ? r.content : '';
+  console.log('DBG url=' + url);
+  console.log('DBG typeof r=' + typeof r + ' isPromise=' + (r && typeof r.then === 'function'));
+  const c = (r && r.content) ? r.content : '';
+  console.log('DBG contentLen=' + c.length + ' head=' + c.substring(0, 120).replace(/\s+/g, ' '));
+  return c;
 }
 
 // 解析卡片列表（搜索/分类/首页通用）
@@ -104,7 +108,10 @@ export default {
   },
 
   search(key) {
-    return parseList(get(HOST + '/vod-search-wd-' + encodeURIComponent(key) + '.html'));
+    console.log('DBG search key=' + key + ' encoded=' + encodeURIComponent(key));
+    const list = parseList(get(HOST + '/vod-search-wd-' + encodeURIComponent(key) + '.html'));
+    console.log('DBG search resultCount=' + list.length);
+    return list;
   },
 
   play(flag, id) {

@@ -69,15 +69,6 @@
    "changeable": 0
   },
   {
-   "key": "AiNewKuaiYing",
-   "name": "💓快影┃4K💓",
-   "type": 3,
-   "api": "csp_AiNewKuaiYingGuard",
-   "searchable": 1,
-   "quickSearch": 1,
-   "changeable": 0
-  },
-  {
    "key": "AiNewLaBi",
    "name": "💓蜡笔┃4K💓",
    "type": 3,

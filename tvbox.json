@@ -60,24 +60,6 @@
    "changeable": 0
   },
   {
-   "key": "AiNewHuBan",
-   "name": "💓虎斑┃4K💓",
-   "type": 3,
-   "api": "csp_AiNewHuBanGuard",
-   "searchable": 1,
-   "quickSearch": 1,
-   "changeable": 0
-  },
-  {
-   "key": "AiNewMuOu",
-   "name": "💓木偶┃4K💓",
-   "type": 3,
-   "api": "csp_AiNewMuOuGuard",
-   "searchable": 1,
-   "quickSearch": 1,
-   "changeable": 0
-  },
-  {
    "key": "AiNewDuoDuo",
    "name": "💓多多┃4K💓",
    "type": 3,

@@ -978,6 +978,15 @@
    "api": "csp_PushGuard",
    "searchable": 1,
    "changeable": 0
+  },
+  {
+   "key": "xiangguys",
+   "name": "香菇影视",
+   "type": 3,
+   "api": "./xiangguys.js",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0
   }
  ],
  "parses": [

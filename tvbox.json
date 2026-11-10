@@ -4,40 +4,6 @@
  "logo": "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaFile/3CEAE9E_773_wexfnw_20250911190012684newMediaFile.gif",
  "sites": [
   {
-   "key": "Douban",
-   "name": "🐮【免费分享】🐮",
-   "type": 3,
-   "api": "csp_NewDouBanGuard",
-   "indexs": 1,
-   "searchable": 0,
-   "quickSearch": 0,
-   "filterable": 0,
-   "ext": "https://cdn.waimaimingtang.com/file/images/bwc/20260414181247-ae51abfbfe.txt"
-  },
-  {
-   "key": "Doubanaaaa",
-   "name": "🐮【更新日期:20261106】🐮",
-   "type": 3,
-   "api": "csp_NewDouBanGuard",
-   "indexs": 1,
-   "searchable": 0,
-   "quickSearch": 0,
-   "filterable": 0,
-   "ext": "https://cdn.waimaimingtang.com/file/images/bwc/20260414181247-ae51abfbfe.txt"
-  },
-  {
-   "key": "Wexconfig",
-   "name": "🐮配置┃中心🐮",
-   "type": 3,
-   "api": "csp_PanConfigGuard",
-   "searchable": 0,
-   "changeable": 0,
-   "indexs": 0,
-   "style": {
-    "type": "list"
-   }
-  },
-  {
    "key": "MyPan",
    "name": "🐮我的┃网盘🐮",
    "type": 3,

@@ -1154,17 +1154,10 @@
  ],
  "lives": [
   {
-   "name": "Kimentanm",
+   "name": "我的直播",
    "type": 0,
-   "url": "https://down.nigx.cn/raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u",
+   "url": "https://raw.githubusercontent.com/linhua8/IPTV/refs/heads/main/IPV4.m3u",
    "playerType": 2
-  },
-  {
-   "name": "综合直播",
-   "type": 0,
-   "playerType": 2,
-   "url": "http://193.123.86.190:14888/TV/iptv.php",
-   "ua": "bingcha/1.1 (mianfeifenxiang) "
   }
  ],
  "headers": [

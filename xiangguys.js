@@ -1,6 +1,7 @@
 // 香菇影视 xiangguys.com 自定义 JS 蜘蛛
 // 结构：搜索页 /vod-search-wd-词.html，分类 /<分类>/hjs<页>.html，
 // 详情 /video/<id>.html，播放页 /video/play/<ep>.html 内嵌 cms_player JSON
+// 注意：TVBox 的内容方法统一要求返回 JSON 字符串，列表/详情需包在 {list:[...]} 里
 
 const HOST = 'https://www.xiangguys.com';
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36';
@@ -19,11 +20,7 @@ const CLASSES = [
 
 function get(url) {
   const r = req(url, { headers: { 'User-Agent': UA }, timeout: 20000 });
-  console.log('DBG url=' + url);
-  console.log('DBG typeof r=' + typeof r + ' isPromise=' + (r && typeof r.then === 'function'));
-  const c = (r && r.content) ? r.content : '';
-  console.log('DBG contentLen=' + c.length + ' head=' + c.substring(0, 120).replace(/\s+/g, ' '));
-  return c;
+  return (r && r.content) ? r.content : '';
 }
 
 // 解析卡片列表（搜索/分类/首页通用）
@@ -58,24 +55,23 @@ export default {
   init() {},
 
   home() {
-    return { class: CLASSES, filters: {} };
+    return JSON.stringify({ class: CLASSES, filters: {} });
   },
 
   homeVod() {
-    return parseList(get(HOST + '/'));
+    return JSON.stringify({ list: parseList(get(HOST + '/')) });
   },
 
   category(tid, pg) {
     const page = pg || 1;
     const html = get(HOST + tid + '/hjs' + page + '.html');
-    const list = parseList(html);
-    return {
+    return JSON.stringify({
       page: page,
       pagecount: parsePageCount(html),
       limit: 20,
       total: 0,
-      list: list
-    };
+      list: parseList(html)
+    });
   },
 
   detail(id) {
@@ -96,22 +92,21 @@ export default {
     while ((m = re.exec(html))) {
       eps.push(m[2].trim() + '$' + HOST + m[1]);
     }
-    return {
-      vod_id: id,
-      vod_name: vodName,
-      vod_pic: pi ? pi[1] : '',
-      vod_remarks: vodRemarks,
-      vod_content: '',
-      vod_play_from: '香菇在线',
-      vod_play_url: eps.join('#')
-    };
+    return JSON.stringify({
+      list: [{
+        vod_id: id,
+        vod_name: vodName,
+        vod_pic: pi ? pi[1] : '',
+        vod_remarks: vodRemarks,
+        vod_content: '',
+        vod_play_from: '香菇在线',
+        vod_play_url: eps.join('#')
+      }]
+    });
   },
 
   search(key) {
-    console.log('DBG search key=' + key + ' encoded=' + encodeURIComponent(key));
-    const list = parseList(get(HOST + '/vod-search-wd-' + encodeURIComponent(key) + '.html'));
-    console.log('DBG search resultCount=' + list.length);
-    return list;
+    return JSON.stringify({ list: parseList(get(HOST + '/vod-search-wd-' + encodeURIComponent(key) + '.html')) });
   },
 
   play(flag, id) {
@@ -119,6 +114,6 @@ export default {
     const m = /var cms_player = (\{[\s\S]*?\});/.exec(html);
     if (!m) return '';
     const obj = JSON.parse(m[1]);
-    return { url: obj.url, parse: 0, header: { 'User-Agent': UA } };
+    return JSON.stringify({ url: obj.url, parse: 0, header: { 'User-Agent': UA } });
   }
 };

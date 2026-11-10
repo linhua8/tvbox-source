@@ -982,7 +982,7 @@
    "key": "xiangguys",
    "name": "香菇影视",
    "type": 3,
-   "api": "./xiangguys.js",
+   "api": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/xiangguys.js",
    "searchable": 1,
    "quickSearch": 1,
    "filterable": 0

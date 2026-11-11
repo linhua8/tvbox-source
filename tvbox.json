@@ -79,30 +79,6 @@
       "changeable": 0
     },
     {
-      "key": "LiveAiHuYa",
-      "name": "🐯‍虎牙┃直播🐯‍",
-      "type": 3,
-      "api": "csp_LiveAiHuYaGuard",
-      "searchable": 1,
-      "changeable": 0
-    },
-    {
-      "key": "LiveAiDouYu",
-      "name": "🐳斗鱼┃直播🐳",
-      "type": 3,
-      "api": "csp_LiveAiDouYuGuard",
-      "searchable": 1,
-      "changeable": 0
-    },
-    {
-      "key": "LiveAiBiLi",
-      "name": "🅱️哔哩┃直播🅱️",
-      "type": 3,
-      "api": "csp_LiveAiBiLiGuard",
-      "searchable": 1,
-      "changeable": 0
-    },
-    {
       "key": "xiangguys",
       "name": "香菇影视",
       "type": 3,

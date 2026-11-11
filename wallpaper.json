@@ -1,0 +1,71 @@
+{
+  "note": "TVBox 壁纸直链（1920x1080 视觉比例 16:9，可直接填到配置的 wallpaper 字段）",
+  "list": [
+    {
+      "file": "01_xueshan.jpg",
+      "name": "雪山日出",
+      "type": "风景",
+      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/01_xueshan.jpg"
+    },
+    {
+      "file": "02_qiuri.jpg",
+      "name": "秋日森林",
+      "type": "风景",
+      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/02_qiuri.jpg"
+    },
+    {
+      "file": "03_riLuo.jpg",
+      "name": "海边日落",
+      "type": "风景",
+      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/03_riLuo.jpg"
+    },
+    {
+      "file": "04_jiguang.jpg",
+      "name": "极光雪山",
+      "type": "风景",
+      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/04_jiguang.jpg"
+    },
+    {
+      "file": "05_jiangnan.jpg",
+      "name": "江南晨雾",
+      "type": "风景",
+      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/05_jiangnan.jpg"
+    },
+    {
+      "file": "06_renxiang1.jpg",
+      "name": "优雅侧脸",
+      "type": "人像",
+      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/06_renxiang1.jpg"
+    },
+    {
+      "file": "07_renxiang2.jpg",
+      "name": "花园微笑",
+      "type": "人像",
+      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/07_renxiang2.jpg"
+    },
+    {
+      "file": "08_renxiang3.jpg",
+      "name": "海边回眸",
+      "type": "人像",
+      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/08_renxiang3.jpg"
+    },
+    {
+      "file": "09_renxiang4.jpg",
+      "name": "咖啡馆午后",
+      "type": "人像",
+      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/09_renxiang4.jpg"
+    },
+    {
+      "file": "10_renxiang5.jpg",
+      "name": "夜景窗前",
+      "type": "人像",
+      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/10_renxiang5.jpg"
+    }
+  ],
+  "random": [
+    {
+      "source": "随机风景（每次请求换一张）",
+      "url": "https://api.btstu.cn/sjbz/api.php?lx=fengjing&format=images"
+    }
+  ]
+}

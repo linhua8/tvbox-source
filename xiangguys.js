@@ -1,10 +1,14 @@
-// 香菇影视 xiangguys.com 自定义 JS 蜘蛛
-// 结构：搜索页 /vod-search-wd-词.html，分类 /<分类>/hjs<页>.html，
+// 香菇影视 xiangguys.com 自定义 JS 蜘蛛（双端兼容版）
+// 结构：搜索 /vod-search-wd-词.html，分类 /<分类>/hjs页.html，
 // 详情 /video/<id>.html，播放页 /video/play/<ep>.html 内嵌 cms_player JSON
-// 注意：TVBox 的内容方法统一要求返回 JSON 字符串，列表/详情需包在 {list:[...]} 里
+// - FongMi / catvod（QuickJS）：default 为继承 Spider 的类，方法直接返回对象
+// - TVBox（旧 JS 运行时）：default 为旧对象，方法返回 JSON 字符串，用全局 req
+import * as catvod from 'catvod';
 
 const HOST = 'https://www.xiangguys.com';
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36';
+const Spider = catvod.Spider;
+const options = () => ({ headers: { 'User-Agent': UA }, timeout: 20000 });
 
 const CLASSES = [
   { type_id: '/dongzuo', type_name: '动作电影' },
@@ -17,11 +21,6 @@ const CLASSES = [
   { type_id: '/donghua', type_name: '动画动漫' },
   { type_id: '/haokandianying', type_name: '好看电影' }
 ];
-
-function get(url) {
-  const r = req(url, { headers: { 'User-Agent': UA }, timeout: 20000 });
-  return (r && r.content) ? r.content : '';
-}
 
 // 解析卡片列表（搜索/分类/首页通用）
 function parseList(html) {
@@ -51,7 +50,50 @@ function parsePageCount(html) {
   return nums.length ? Math.max.apply(null, nums) : 1;
 }
 
-export default {
+// 详情对象（两端共用）
+function buildDetail(id, html) {
+  const h2 = /<h2>([\s\S]*?)<\/h2>/.exec(html);
+  let vodName = '';
+  let vodRemarks = '';
+  if (h2) {
+    const seg = h2[1];
+    vodName = (/([^<]+)/.exec(seg) || [''])[1].trim();
+    const sm = /<small>([^<]+)<\/small>/.exec(seg);
+    if (sm) vodRemarks = sm[1];
+  }
+  const pi = /detail-poster[\s\S]*?<img src="([^"]+)"/.exec(html);
+  const eps = [];
+  const re = /<li data-id="[^"]+"><a href="(\/video\/play\/[^"]+\.html)"[^>]*>([^<]+)<\/a><\/li>/g;
+  let m;
+  while ((m = re.exec(html))) {
+    eps.push(m[2].trim() + '$' + HOST + m[1]);
+  }
+  return {
+    vod_id: id,
+    vod_name: vodName,
+    vod_pic: pi ? pi[1] : '',
+    vod_remarks: vodRemarks,
+    vod_content: '',
+    vod_play_from: '香菇在线',
+    vod_play_url: eps.join('#')
+  };
+}
+
+// 播放对象（两端共用）
+function buildPlayer(html) {
+  const m = /var cms_player = (\{[\s\S]*?\});/.exec(html);
+  if (!m) return null;
+  const obj = JSON.parse(m[1]);
+  return { url: obj.url, parse: 0, header: { 'User-Agent': UA } };
+}
+
+// ===== TVBox 旧端：同步全局 req，方法返回 JSON 字符串 =====
+function get(url) {
+  const r = req(url, options());
+  return (r && r.content) ? r.content : '';
+}
+
+const legacy = {
   init() {},
 
   home() {
@@ -75,34 +117,7 @@ export default {
   },
 
   detail(id) {
-    const html = get(HOST + id);
-    const h2 = /<h2>([\s\S]*?)<\/h2>/.exec(html);
-    let vodName = '';
-    let vodRemarks = '';
-    if (h2) {
-      const seg = h2[1];
-      vodName = (/([^<]+)/.exec(seg) || [''])[1].trim();
-      const sm = /<small>([^<]+)<\/small>/.exec(seg);
-      if (sm) vodRemarks = sm[1];
-    }
-    const pi = /detail-poster[\s\S]*?<img src="([^"]+)"/.exec(html);
-    const eps = [];
-    const re = /<li data-id="[^"]+"><a href="(\/video\/play\/[^"]+\.html)"[^>]*>([^<]+)<\/a><\/li>/g;
-    let m;
-    while ((m = re.exec(html))) {
-      eps.push(m[2].trim() + '$' + HOST + m[1]);
-    }
-    return JSON.stringify({
-      list: [{
-        vod_id: id,
-        vod_name: vodName,
-        vod_pic: pi ? pi[1] : '',
-        vod_remarks: vodRemarks,
-        vod_content: '',
-        vod_play_from: '香菇在线',
-        vod_play_url: eps.join('#')
-      }]
-    });
+    return JSON.stringify({ list: [buildDetail(id, get(HOST + id))] });
   },
 
   search(key) {
@@ -110,10 +125,54 @@ export default {
   },
 
   play(flag, id) {
-    const html = get(id);
-    const m = /var cms_player = (\{[\s\S]*?\});/.exec(html);
-    if (!m) return '';
-    const obj = JSON.parse(m[1]);
-    return JSON.stringify({ url: obj.url, parse: 0, header: { 'User-Agent': UA } });
+    const player = buildPlayer(get(id));
+    return player ? JSON.stringify(player) : '';
   }
 };
+
+// ===== FongMi / catvod 端：继承 Spider，方法返回对象 =====
+let modern = null;
+if (typeof Spider === 'function') {
+  modern = class XG extends Spider {
+    async fetch(url) {
+      const r = await this.net.req(url, options());
+      return r && r.content ? r.content : '';
+    }
+
+    homeContent(filter) {
+      return { class: CLASSES, filters: {} };
+    }
+
+    async homeVideoContent() {
+      return { list: parseList(await this.fetch(HOST + '/')) };
+    }
+
+    async categoryContent(tid, pg, filter, extend) {
+      const page = Number(pg) || 1;
+      const html = await this.fetch(HOST + tid + '/hjs' + page + '.html');
+      return {
+        page: page,
+        pagecount: parsePageCount(html),
+        limit: 20,
+        total: 0,
+        list: parseList(html)
+      };
+    }
+
+    async detailContent(ids) {
+      const id = Array.isArray(ids) ? ids[0] : ids;
+      return { list: [buildDetail(id, await this.fetch(HOST + id))] };
+    }
+
+    async searchContent(key, quick, pg) {
+      return { list: parseList(await this.fetch(HOST + '/vod-search-wd-' + encodeURIComponent(key) + '.html')) };
+    }
+
+    async playerContent(flag, id, vipFlags) {
+      const player = buildPlayer(await this.fetch(id));
+      return player || {};
+    }
+  };
+}
+
+export default modern || legacy;

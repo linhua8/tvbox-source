@@ -12,6 +12,15 @@
       "filterable": 0
     },
     {
+      "key": "nnyy",
+      "name": "努努影院",
+      "type": 3,
+      "api": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/nnyy.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0
+    },
+    {
       "key": "WexHanXiaoQuan",
       "name": "💥韩剧┃秒播💥",
       "type": 3,

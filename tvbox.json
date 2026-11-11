@@ -1,6 +1,6 @@
 {
   "spider": "./spider.jpg",
-  "wallpaper": "https://api.btstu.cn/sjbz/api.php?lx=fengjing&format=images",
+  "wallpaper": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/01_xueshan.jpg",
   "sites": [
     {
       "key": "xiangguys",

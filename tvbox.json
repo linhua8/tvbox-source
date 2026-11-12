@@ -12,15 +12,6 @@
       "filterable": 0
     },
     {
-      "key": "nnyy",
-      "name": "努努影院",
-      "type": 3,
-      "api": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/nnyy.js",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 0
-    },
-    {
       "key": "WexHanXiaoQuan",
       "name": "💥韩剧┃秒播💥",
       "type": 3,
@@ -73,19 +64,6 @@
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0
-    },
-    {
-      "key": "AppV7 | 追剧达人",
-      "name": "💥追剧┃秒播💥",
-      "type": 3,
-      "api": "csp_WexAppV7Guard",
-      "searchable": 1,
-      "changeable": 0,
-      "ext": {
-        "config": "AppV7Zjdr",
-        "proxyImg": false
-      },
-      "timeout": 120
     },
     {
       "key": "WexAiReBo",

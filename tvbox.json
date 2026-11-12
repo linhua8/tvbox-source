@@ -12,6 +12,15 @@
       "filterable": 0
     },
     {
+      "key": "keke1",
+      "name": "可可影视",
+      "type": 3,
+      "api": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/keke1.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0
+    },
+    {
       "key": "WexHanXiaoQuan",
       "name": "💥韩剧┃秒播💥",
       "type": 3,

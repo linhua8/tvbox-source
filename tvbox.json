@@ -22,7 +22,7 @@
     },
     {
       "key": "WexHanXiaoQuan",
-      "name": "💥韩剧┃秒播💥",
+      "name": "韩剧秒播",
       "type": 3,
       "api": "csp_WexAiHanXiaoQuanGuard",
       "searchable": 1,
@@ -31,7 +31,7 @@
     },
     {
       "key": "WexAiGuaZi",
-      "name": "💥瓜子┃秒播💥",
+      "name": "瓜子秒播",
       "type": 3,
       "api": "csp_WexAiGuaZiGuard",
       "searchable": 1,
@@ -40,7 +40,7 @@
     },
     {
       "key": "WexAiDuBoKu",
-      "name": "💥独播┃秒播💥",
+      "name": "独播秒播",
       "type": 3,
       "api": "csp_WexAiDuBoKuGuard",
       "searchable": 1,
@@ -49,7 +49,7 @@
     },
     {
       "key": "WexAiWenCai",
-      "name": "💥文才┃秒播💥",
+      "name": "文才秒播",
       "type": 3,
       "api": "csp_WexAiWenCaiGuard",
       "searchable": 1,
@@ -58,7 +58,7 @@
     },
     {
       "key": "WexFengYe4K",
-      "name": "💥小枫┃秒播💥",
+      "name": "小枫秒播",
       "type": 3,
       "api": "csp_WexFengYe4KGuard",
       "searchable": 1,
@@ -67,7 +67,7 @@
     },
     {
       "key": "下饭",
-      "name": "💥下饭┃秒播💥",
+      "name": "下饭秒播",
       "type": 3,
       "api": "csp_WexAiJuXiaFanGuard",
       "searchable": 1,
@@ -76,7 +76,7 @@
     },
     {
       "key": "WexAiReBo",
-      "name": "💥热播┃秒播💥",
+      "name": "热播秒播",
       "type": 3,
       "api": "csp_WexAiReBoGuard",
       "searchable": 1,

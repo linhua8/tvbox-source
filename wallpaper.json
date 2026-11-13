@@ -1,77 +1,105 @@
 {
-  "note": "TVBox 壁纸只能填一个地址，点「换张壁纸」就是重新下载它。当前默认填的是随机风景源（302 跳转，TVBox 会跟随，每次一张新风景）。想固定用下面某张，把 tvbox.json 的 wallpaper 换成对应 url 即可；仓库直链最稳、最快。",
-  "list": [
-    {
-      "file": "01_xueshan.jpg",
-      "name": "雪山日出",
-      "type": "风景",
-      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/01_xueshan.jpg"
-    },
-    {
-      "file": "02_qiuri.jpg",
-      "name": "秋日森林",
-      "type": "风景",
-      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/02_qiuri.jpg"
-    },
-    {
-      "file": "03_riLuo.jpg",
-      "name": "海边日落",
-      "type": "风景",
-      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/03_riLuo.jpg"
-    },
-    {
-      "file": "04_jiguang.jpg",
-      "name": "极光雪山",
-      "type": "风景",
-      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/04_jiguang.jpg"
-    },
-    {
-      "file": "05_jiangnan.jpg",
-      "name": "江南晨雾",
-      "type": "风景",
-      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/05_jiangnan.jpg"
-    },
-    {
-      "file": "06_renxiang1.jpg",
-      "name": "优雅侧脸",
-      "type": "人像",
-      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/06_renxiang1.jpg"
-    },
-    {
-      "file": "07_renxiang2.jpg",
-      "name": "花园微笑",
-      "type": "人像",
-      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/07_renxiang2.jpg"
-    },
-    {
-      "file": "08_renxiang3.jpg",
-      "name": "海边回眸",
-      "type": "人像",
-      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/08_renxiang3.jpg"
-    },
-    {
-      "file": "09_renxiang4.jpg",
-      "name": "咖啡馆午后",
-      "type": "人像",
-      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/09_renxiang4.jpg"
-    },
-    {
-      "file": "10_renxiang5.jpg",
-      "name": "夜景窗前",
-      "type": "人像",
-      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/10_renxiang5.jpg"
-    },
-    {
-      "file": "11_renxiang6.jpg",
-      "name": "白衬衫人像",
-      "type": "人像",
-      "url": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/11_renxiang6.jpg"
-    }
-  ],
-  "random": [
-    {
-      "source": "随机风景（每次请求换一张）",
-      "url": "https://api.btstu.cn/sjbz/api.php?lx=fengjing&format=images"
-    }
-  ]
+
+    "note":  "TVBox 壁纸只能填一个地址，点「换张壁纸」就是重新下载它。当前默认填的是随机风景源（302 跳转，TVBox 会跟随，每次一张新风景）。想固定用下面某张，把 tvbox.json 的 wallpaper 换成对应 url 即可；仓库直链最稳、最快。",
+
+    "list":  [
+
+                 {
+
+                     "file":  "04_jiguang.jpg",
+
+                     "name":  "极光雪山",
+
+                     "type":  "风景",
+
+                     "url":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/04_jiguang.jpg"
+
+                 },
+
+                 {
+
+                     "file":  "05_qingshan.jpg",
+
+                     "name":  "青雾远山",
+
+                     "type":  "风景",
+
+                     "url":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/05_qingshan.jpg"
+
+                 },
+
+                 {
+
+                     "file":  "06_qinghai.jpg",
+
+                     "name":  "深夜静海",
+
+                     "type":  "风景",
+
+                     "url":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/06_qinghai.jpg"
+
+                 },
+
+                 {
+
+                     "file":  "07_qinglin.jpg",
+
+                     "name":  "幽林青雾",
+
+                     "type":  "风景",
+
+                     "url":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/07_qinglin.jpg"
+
+                 },
+
+                 {
+
+                     "file":  "08_qingguang.jpg",
+
+                     "name":  "暗角微光",
+
+                     "type":  "渐变",
+
+                     "url":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/08_qingguang.jpg"
+
+                 },
+
+                 {
+
+                     "file":  "09_qinghu.jpg",
+
+                     "name":  "星湖夜话",
+
+                     "type":  "风景",
+
+                     "url":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/09_qinghu.jpg"
+
+                 },
+
+                 {
+
+                     "file":  "10_qingyu.jpg",
+
+                     "name":  "雨夜青街",
+
+                     "type":  "城市",
+
+                     "url":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/10_qingyu.jpg"
+
+                 }
+
+             ],
+
+    "random":  [
+
+                   {
+
+                       "source":  "随机风景（每次请求换一张）",
+
+                       "url":  "https://api.btstu.cn/sjbz/api.php?lx=fengjing\u0026format=images"
+
+                   }
+
+               ]
+
 }

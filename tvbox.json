@@ -1,510 +1,523 @@
 {
 
-  "spider": "./spider.jpg",
+    "spider":  "./spider.jpg",
 
-  "wallpaper": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/04_jiguang.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/05_qingshan.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/06_qinghai.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/07_qinglin.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/08_qingguang.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/09_qinghu.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/10_qingyu.jpg",
+    "wallpaper":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/04_jiguang.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/05_qingshan.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/06_qinghai.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/07_qinglin.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/08_qingguang.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/09_qinghu.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/10_qingyu.jpg",
 
-  "sites": [
+    "sites":  [
 
-    {
+                  {
 
-      "key": "xiangguys",
+                      "key":  "meijutt",
 
-      "name": "香菇影视",
+                      "name":  "美剧天堂",
 
-      "type": 3,
+                      "type":  3,
 
-      "api": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/xiangguys.js",
+                      "api":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/meijutt.js"
 
-      "searchable": 1,
+                  },
 
-      "quickSearch": 1,
+                  {
 
-      "filterable": 0
+                      "key":  "xiangguys",
 
-    },
+                      "name":  "香菇影视",
 
-    {
+                      "type":  3,
 
-      "key": "keke1",
+                      "api":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/xiangguys.js",
 
-      "name": "可可影视",
+                      "searchable":  1,
 
-      "type": 3,
+                      "quickSearch":  1,
 
-      "api": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/keke1.js",
+                      "filterable":  0
 
-      "searchable": 1,
+                  },
 
-      "quickSearch": 1,
+                  {
 
-      "filterable": 0
+                      "key":  "keke1",
 
-    },
+                      "name":  "可可影视",
 
-    {
+                      "type":  3,
 
-      "key": "WexHanXiaoQuan",
+                      "api":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/keke1.js",
 
-      "name": "韩剧秒播",
+                      "searchable":  1,
 
-      "type": 3,
+                      "quickSearch":  1,
 
-      "api": "csp_WexAiHanXiaoQuanGuard",
+                      "filterable":  0
 
-      "searchable": 1,
+                  },
 
-      "quickSearch": 1,
+                  {
 
-      "changeable": 0
+                      "key":  "WexHanXiaoQuan",
 
-    },
+                      "name":  "韩剧秒播",
 
-    {
+                      "type":  3,
 
-      "key": "WexAiGuaZi",
+                      "api":  "csp_WexAiHanXiaoQuanGuard",
 
-      "name": "瓜子秒播",
+                      "searchable":  1,
 
-      "type": 3,
+                      "quickSearch":  1,
 
-      "api": "csp_WexAiGuaZiGuard",
+                      "changeable":  0
 
-      "searchable": 1,
+                  },
 
-      "quickSearch": 1,
+                  {
 
-      "changeable": 0
+                      "key":  "WexAiGuaZi",
 
-    },
+                      "name":  "瓜子秒播",
 
-    {
+                      "type":  3,
 
-      "key": "WexAiDuBoKu",
+                      "api":  "csp_WexAiGuaZiGuard",
 
-      "name": "独播秒播",
+                      "searchable":  1,
 
-      "type": 3,
+                      "quickSearch":  1,
 
-      "api": "csp_WexAiDuBoKuGuard",
+                      "changeable":  0
 
-      "searchable": 1,
+                  },
 
-      "quickSearch": 1,
+                  {
 
-      "changeable": 0
+                      "key":  "WexAiDuBoKu",
 
-    },
+                      "name":  "独播秒播",
 
-    {
+                      "type":  3,
 
-      "key": "WexAiWenCai",
+                      "api":  "csp_WexAiDuBoKuGuard",
 
-      "name": "文才秒播",
+                      "searchable":  1,
 
-      "type": 3,
+                      "quickSearch":  1,
 
-      "api": "csp_WexAiWenCaiGuard",
+                      "changeable":  0
 
-      "searchable": 1,
+                  },
 
-      "quickSearch": 1,
+                  {
 
-      "changeable": 0
+                      "key":  "WexAiWenCai",
 
-    },
+                      "name":  "文才秒播",
 
-    {
+                      "type":  3,
 
-      "key": "WexFengYe4K",
+                      "api":  "csp_WexAiWenCaiGuard",
 
-      "name": "小枫秒播",
+                      "searchable":  1,
 
-      "type": 3,
+                      "quickSearch":  1,
 
-      "api": "csp_WexFengYe4KGuard",
+                      "changeable":  0
 
-      "searchable": 1,
+                  },
 
-      "quickSearch": 1,
+                  {
 
-      "changeable": 0
+                      "key":  "WexFengYe4K",
 
-    },
+                      "name":  "小枫秒播",
 
-    {
+                      "type":  3,
 
-      "key": "下饭",
+                      "api":  "csp_WexFengYe4KGuard",
 
-      "name": "下饭秒播",
+                      "searchable":  1,
 
-      "type": 3,
+                      "quickSearch":  1,
 
-      "api": "csp_WexAiJuXiaFanGuard",
+                      "changeable":  0
 
-      "searchable": 1,
+                  },
 
-      "quickSearch": 1,
+                  {
 
-      "changeable": 0
+                      "key":  "下饭",
 
-    },
+                      "name":  "下饭秒播",
 
-    {
+                      "type":  3,
 
-      "key": "WexAiReBo",
+                      "api":  "csp_WexAiJuXiaFanGuard",
 
-      "name": "热播秒播",
+                      "searchable":  1,
 
-      "type": 3,
+                      "quickSearch":  1,
 
-      "api": "csp_WexAiReBoGuard",
+                      "changeable":  0
 
-      "searchable": 1,
+                  },
 
-      "quickSearch": 1,
+                  {
 
-      "changeable": 0
+                      "key":  "WexAiReBo",
 
-    }
+                      "name":  "热播秒播",
 
-  ],
+                      "type":  3,
 
-  "parses": [],
+                      "api":  "csp_WexAiReBoGuard",
 
-  "doh": [
+                      "searchable":  1,
 
-    {
+                      "quickSearch":  1,
 
-      "name": "Google",
+                      "changeable":  0
 
-      "url": "https://dns.google/dns-query",
+                  }
 
-      "ips": [
+              ],
 
-        "8.8.4.4",
+    "parses":  [
 
-        "8.8.8.8"
 
-      ]
 
-    },
+               ],
 
-    {
+    "doh":  [
 
-      "name": "Cloudflare",
+                {
 
-      "url": "https://cloudflare-dns.com/dns-query",
+                    "name":  "Google",
 
-      "ips": [
+                    "url":  "https://dns.google/dns-query",
 
-        "1.1.1.1",
+                    "ips":  [
 
-        "1.0.0.1",
+                                "8.8.4.4",
 
-        "2606:4700:4700::1111",
+                                "8.8.8.8"
 
-        "2606:4700:4700::1001"
+                            ]
 
-      ]
+                },
 
-    },
+                {
 
-    {
+                    "name":  "Cloudflare",
 
-      "name": "AdGuard",
+                    "url":  "https://cloudflare-dns.com/dns-query",
 
-      "url": "https://dns.adguard.com/dns-query",
+                    "ips":  [
 
-      "ips": [
+                                "1.1.1.1",
 
-        "94.140.14.140",
+                                "1.0.0.1",
 
-        "94.140.14.141"
+                                "2606:4700:4700::1111",
 
-      ]
+                                "2606:4700:4700::1001"
 
-    },
+                            ]
 
-    {
+                },
 
-      "name": "DNSWatch",
+                {
 
-      "url": "https://resolver2.dns.watch/dns-query",
+                    "name":  "AdGuard",
 
-      "ips": [
+                    "url":  "https://dns.adguard.com/dns-query",
 
-        "84.200.69.80",
+                    "ips":  [
 
-        "84.200.70.40"
+                                "94.140.14.140",
 
-      ]
+                                "94.140.14.141"
 
-    },
+                            ]
 
-    {
+                },
 
-      "name": "Quad9",
+                {
 
-      "url": "https://dns.quad9.net/dns-quer",
+                    "name":  "DNSWatch",
 
-      "ips": [
+                    "url":  "https://resolver2.dns.watch/dns-query",
 
-        "9.9.9.9",
+                    "ips":  [
 
-        "149.112.112.112"
+                                "84.200.69.80",
 
-      ]
+                                "84.200.70.40"
 
-    }
+                            ]
 
-  ],
+                },
 
-  "rules": [
+                {
 
-    {
+                    "name":  "Quad9",
 
-      "name": "proxy",
+                    "url":  "https://dns.quad9.net/dns-quer",
 
-      "hosts": [
+                    "ips":  [
 
-        "hlsztemgsplive.miguvideo.com=hlsztemgsplive.188766.xyz",
+                                "9.9.9.9",
 
-        "cache.ott.fifalive.itv.cmvideo.cn=fifalive.188766.xyz",
+                                "149.112.112.112"
 
-        "iptv.huuc.edu.cn=huucv6.188766.xyz",
+                            ]
 
-        "raw.githubusercontent.com",
+                }
 
-        "googlevideo.com",
+            ],
 
-        "cdn.v82u1l.com",
+    "rules":  [
 
-        "cdn.iz8qkg.com",
+                  {
 
-        "cdn.kin6c1.com",
+                      "name":  "proxy",
 
-        "c.biggggg.com",
+                      "hosts":  [
 
-        "c.olddddd.com",
+                                    "hlsztemgsplive.miguvideo.com=hlsztemgsplive.188766.xyz",
 
-        "haiwaikan.com",
+                                    "cache.ott.fifalive.itv.cmvideo.cn=fifalive.188766.xyz",
 
-        "www.histar.tv",
+                                    "iptv.huuc.edu.cn=huucv6.188766.xyz",
 
-        "youtube.com",
+                                    "raw.githubusercontent.com",
 
-        "uhibo.com",
+                                    "googlevideo.com",
 
-        ".*boku.*",
+                                    "cdn.v82u1l.com",
 
-        ".*nivod.*",
+                                    "cdn.iz8qkg.com",
 
-        ".*ulivetv.*"
+                                    "cdn.kin6c1.com",
 
-      ]
+                                    "c.biggggg.com",
 
-    },
+                                    "c.olddddd.com",
 
-    {
+                                    "haiwaikan.com",
 
-      "name": "海外看",
+                                    "www.histar.tv",
 
-      "hosts": [
+                                    "youtube.com",
 
-        "haiwaikan"
+                                    "uhibo.com",
 
-      ],
+                                    ".*boku.*",
 
-      "regex": [
+                                    ".*nivod.*",
 
-        "10.0099",
+                                    ".*ulivetv.*"
 
-        "10.3333",
+                                ]
 
-        "16.0599",
+                  },
 
-        "8.1748",
+                  {
 
-        "12.33",
+                      "name":  "海外看",
 
-        "10.85"
+                      "hosts":  [
 
-      ]
+                                    "haiwaikan"
 
-    },
+                                ],
 
-    {
+                      "regex":  [
 
-      "name": "火山嗅探",
+                                    "10.0099",
 
-      "hosts": [
+                                    "10.3333",
 
-        "huoshan.com"
+                                    "16.0599",
 
-      ],
+                                    "8.1748",
 
-      "regex": [
+                                    "12.33",
 
-        "item_id="
+                                    "10.85"
 
-      ]
+                                ]
 
-    },
+                  },
 
-    {
+                  {
 
-      "name": "抖音嗅探",
+                      "name":  "火山嗅探",
 
-      "hosts": [
+                      "hosts":  [
 
-        "douyin.com"
+                                    "huoshan.com"
 
-      ],
+                                ],
 
-      "regex": [
+                      "regex":  [
 
-        "is_play_url="
+                                    "item_id="
 
-      ]
+                                ]
 
-    },
+                  },
 
-    {
+                  {
 
-      "name": "農民嗅探",
+                      "name":  "抖音嗅探",
 
-      "hosts": [
+                      "hosts":  [
 
-        "toutiaovod.com"
+                                    "douyin.com"
 
-      ],
+                                ],
 
-      "regex": [
+                      "regex":  [
 
-        "video/tos/cn"
+                                    "is_play_url="
 
-      ]
+                                ]
 
-    },
+                  },
 
-    {
+                  {
 
-      "name": "新视觉嗅探",
+                      "name":  "農民嗅探",
 
-      "hosts": [
+                      "hosts":  [
 
-        "muzhi-video.bj.bcebos.com"
+                                    "toutiaovod.com"
 
-      ],
+                                ],
 
-      "regex": [
+                      "regex":  [
 
-        "202403/"
+                                    "video/tos/cn"
 
-      ]
+                                ]
 
-    },
+                  },
 
-    {
+                  {
 
-      "name": "七新嗅探",
+                      "name":  "新视觉嗅探",
 
-      "hosts": [
+                      "hosts":  [
 
-        "api.52wyb.com"
+                                    "muzhi-video.bj.bcebos.com"
 
-      ],
+                                ],
 
-      "regex": [
+                      "regex":  [
 
-        "m3u8?pt=m3u8"
+                                    "202403/"
 
-      ]
+                                ]
 
-    },
+                  },
 
-    {
+                  {
 
-      "name": "夜市點擊",
+                      "name":  "七新嗅探",
 
-      "hosts": [
+                      "hosts":  [
 
-        "yeslivetv.com"
+                                    "api.52wyb.com"
 
-      ],
+                                ],
 
-      "script": [
+                      "regex":  [
 
-        "document.getElementsByClassName('vjs-big-play-button')[0].click()"
+                                    "m3u8?pt=m3u8"
 
-      ]
+                                ]
 
-    },
+                  },
 
-    {
+                  {
 
-      "name": "毛驢點擊",
+                      "name":  "夜市點擊",
 
-      "hosts": [
+                      "hosts":  [
 
-        "www.maolvys.com"
+                                    "yeslivetv.com"
 
-      ],
+                                ],
 
-      "script": [
+                      "script":  [
 
-        "document.getElementsByClassName('swal-button swal-button--confirm')[0].click()"
+                                     "document.getElementsByClassName(\u0027vjs-big-play-button\u0027)[0].click()"
 
-      ]
+                                 ]
 
-    }
+                  },
 
-  ],
+                  {
 
-  "ads": [
+                      "name":  "毛驢點擊",
 
-    "mozai.4gtv.tv",
+                      "hosts":  [
 
-    "pv.vipwm.cc",
+                                    "www.maolvys.com"
 
-    "static-mozai.4gtv.tv"
+                                ],
 
-  ],
+                      "script":  [
 
-  "lives": [
+                                     "document.getElementsByClassName(\u0027swal-button swal-button--confirm\u0027)[0].click()"
 
-    {
+                                 ]
 
-      "name": "我的直播",
+                  }
 
-      "type": 0,
+              ],
 
-      "url": "https://raw.githubusercontent.com/linhua8/IPTV/refs/heads/main/IPV4.m3u",
+    "ads":  [
 
-      "playerType": 2
+                "mozai.4gtv.tv",
 
-    }
+                "pv.vipwm.cc",
 
-  ],
+                "static-mozai.4gtv.tv"
 
-  "headers": [
+            ],
 
-    {
+    "lives":  [
 
-      "host": "hlsztemgsplive.miguvideo.com",
+                  {
 
-      "header": {
+                      "name":  "我的直播",
 
-        "User-Agent": "bingcha/1.1 (mianfeifenxiang) "
+                      "type":  0,
 
-      }
+                      "url":  "https://raw.githubusercontent.com/linhua8/IPTV/refs/heads/main/IPV4.m3u",
 
-    }
+                      "playerType":  2
 
-  ]
+                  }
+
+              ],
+
+    "headers":  [
+
+                    {
+
+                        "host":  "hlsztemgsplive.miguvideo.com",
+
+                        "header":  {
+
+                                       "User-Agent":  "bingcha/1.1 (mianfeifenxiang) "
+
+                                   }
+
+                    }
+
+                ]
 
 }
-
-
-

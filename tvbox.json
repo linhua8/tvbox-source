@@ -2,7 +2,7 @@
 
     "spider":  "./spider.jpg",
 
-    "wallpaper":  "https://cdn.jsdelivr.net/gh/linhua8/tvbox-source@main/wallpaper/04_jiguang.jpg|https://cdn.jsdelivr.net/gh/linhua8/tvbox-source@main/wallpaper/05_qingshan.jpg|https://cdn.jsdelivr.net/gh/linhua8/tvbox-source@main/wallpaper/06_qinghai.jpg|https://cdn.jsdelivr.net/gh/linhua8/tvbox-source@main/wallpaper/07_qinglin.jpg|https://cdn.jsdelivr.net/gh/linhua8/tvbox-source@main/wallpaper/08_qingguang.jpg|https://cdn.jsdelivr.net/gh/linhua8/tvbox-source@main/wallpaper/09_qinghu.jpg|https://cdn.jsdelivr.net/gh/linhua8/tvbox-source@main/wallpaper/10_qingyu.jpg",
+    "wallpaper":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/04_jiguang.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/05_qingshan.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/06_qinghai.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/07_qinglin.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/08_qingguang.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/09_qinghu.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/10_qingyu.jpg",
 
     "sites":  [
 
@@ -14,7 +14,7 @@
 
                       "type":  3,
 
-                      "api":  "https://cdn.jsdelivr.net/gh/linhua8/tvbox-source@main/meijutt.js"
+                      "api":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/meijutt.js"
 
                   },
 
@@ -26,7 +26,7 @@
 
                       "type":  3,
 
-                      "api":  "https://cdn.jsdelivr.net/gh/linhua8/tvbox-source@main/xiangguys.js",
+                      "api":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/xiangguys.js",
 
                       "searchable":  1,
 
@@ -44,7 +44,7 @@
 
                       "type":  3,
 
-                      "api":  "https://cdn.jsdelivr.net/gh/linhua8/tvbox-source@main/keke1.js",
+                      "api":  "https://raw.githubusercontent.com/linhua8/tvbox-source/main/keke1.js",
 
                       "searchable":  1,
 

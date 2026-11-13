@@ -50,12 +50,10 @@ function isBlocked(html) {
   return html.length < 500 && /window\.location\.href/.test(html);
 }
 
-// 解析分类列表页
+// 解析分类列表页（文字链接，无封面）
 function parseList(html) {
   const list = [];
   const seen = {};
-  // 分类页列表项：<a title="片名" href="/meijutt/12345.html" target="_blank">片名</a>
-  // title 在 href 前面
   const re = /<a[^>]*title="([^"]*)"[^>]*href="\/meijutt\/(\d+)\.html"[^>]*>/g;
   let m;
   while ((m = re.exec(html))) {
@@ -66,6 +64,27 @@ function parseList(html) {
       vod_id: id,
       vod_name: m[1].trim(),
       vod_pic: '',
+      vod_remarks: ''
+    });
+  }
+  return list;
+}
+
+// 解析首页推荐位（带封面图）
+function parseHomeList(html) {
+  const list = [];
+  const seen = {};
+  // <a href="/meijutt/12345.html" ...><img src="封面" alt="片名"></a>
+  const re = /<a[^>]*href="\/meijutt\/(\d+)\.html"[^>]*>\s*<img[^>]*src="([^"]+)"[^>]*alt="([^"]*)"[^>]*>\s*<\/a>/g;
+  let m;
+  while ((m = re.exec(html))) {
+    const id = m[1];
+    if (seen[id]) continue;
+    seen[id] = true;
+    list.push({
+      vod_id: id,
+      vod_name: m[3].trim(),
+      vod_pic: m[2],
       vod_remarks: ''
     });
   }
@@ -180,7 +199,7 @@ const legacy = {
     return JSON.stringify({ class: CLASSES, filters: {} });
   },
   homeVod() {
-    return JSON.stringify({ list: parseList(get(HOST + '/mjtt/1.html')) });
+    return JSON.stringify({ list: parseHomeList(get(HOST + '/')) });
   },
   category(tid, pg) {
     const page = Number(pg) || 1;
@@ -227,7 +246,7 @@ if (typeof Spider === 'function') {
       return { class: CLASSES, filters: {} };
     }
     async homeVideoContent() {
-      return { list: parseList(await this.fetch(HOST + '/mjtt/1.html')) };
+      return { list: parseHomeList(await this.fetch(HOST + '/')) };
     }
     async categoryContent(tid, pg, filter, extend) {
       const page = Number(pg) || 1;

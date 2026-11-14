@@ -25,17 +25,19 @@ function absUrl(u) {
 function parseList(html) {
   const list = [];
   // 匹配两种卡片：module-poster-item(分类页) 和 module-card-item-poster(搜索页)
-  const re = /<a[^>]*href="(\/voddetail\/\d+\.html)"[^>]*(?:title="([^"]*)")?[^>]*class="(?:module-poster-item|module-card-item-poster)[^"]*"[^>]*>([\s\S]*?)<\/a>/g;
+  const re = /<a[^>]*href="(\/voddetail\/\d+\.html)"[^>]*class="(?:module-poster-item|module-card-item-poster)[^"]*"[^>]*>([\s\S]*?)<\/a>/g;
   let m;
   while ((m = re.exec(html))) {
-    const seg = m[3];
+    const seg = m[2];
     const pic = /data-original="([^"]+)"/.exec(seg);
     const note = /module-item-note">([^<]*)</.exec(seg);
-    // 标题可能在title属性或卡片里
-    let name = m[2] ? m[2].trim() : '';
+    // 标题可能在title属性或alt属性里
+    let name = '';
+    const t = /title="([^"]*)"/.exec(seg);
+    if (t) name = t[1].trim();
     if (!name) {
-      const t = /title="([^"]*)"/.exec(seg);
-      if (t) name = t[1].trim();
+      const a = /alt="([^"]*)"/.exec(seg);
+      if (a) name = a[1].replace(/<\/?em>/g, '').trim();
     }
     list.push({
       vod_id: m[1],

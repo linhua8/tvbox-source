@@ -3,12 +3,6 @@
   "wallpaper": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/04_jiguang.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/11_senlin.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/12_jianbian.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/13_caoyuan.jpg",
   "sites": [
     {
-      "key": "meijutt",
-      "name": "美剧天堂",
-      "type": 3,
-      "api": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/meijutt.js"
-    },
-    {
       "key": "xiangguys",
       "name": "香菇影视",
       "type": 3,

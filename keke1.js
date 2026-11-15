@@ -102,6 +102,9 @@ function sha1Bytes(str) {
 
 // ===== cdndefend PoW 求解 =====
 let solvedCookie = '';  // 缓存已解出的 cookie 值（base+i）
+let cookieTime = 0;     // cookie生成时间，超时重新解
+const COOKIE_TTL = 30 * 60 * 1000;  // 30分钟有效期
+
 function isChallenge(html) {
   return !!html && html.indexOf('cdndefend') !== -1 && html.indexOf('Protected by cdndefend') !== -1;
 }
@@ -118,6 +121,25 @@ function solveChallenge(html) {
     }
   }
   return null;
+}
+// 确保cookie有效：过期或为空时重新求解
+function ensureCookie() {
+  if (solvedCookie && (Date.now() - cookieTime) < COOKIE_TTL) return;
+  // 先请求一次拿挑战页
+  try {
+    var r = req(HOST + '/', options());
+    var content = (r && r.content) ? r.content : '';
+    if (isChallenge(content)) {
+      var ck = solveChallenge(content);
+      if (ck) {
+        solvedCookie = ck;
+        cookieTime = Date.now();
+      }
+    } else if (content && content.length > 1000) {
+      // 直接成功了，说明之前的cookie还有效
+      cookieTime = Date.now();
+    }
+  } catch (e) {}
 }
 function buildHeaders() {
   var h = {
@@ -259,15 +281,15 @@ function searchUrl(key, token) {
 
 // ===== TVBox 旧端：同步全局 req，方法返回 JSON 字符串 =====
 function get(url) {
+  ensureCookie();  // 先确保cookie有效
   var r = req(url, options());
   var content = (r && r.content) ? r.content : '';
-  if (isChallenge(content)) {
-    var ck = solveChallenge(content);
-    if (ck) {
-      solvedCookie = ck;
-      r = req(url, options());
-      content = (r && r.content) ? r.content : '';
-    }
+  // 如果遇到挑战页或内容为空，重新解一次cookie再试
+  if (isChallenge(content) || !content || content.length < 100) {
+    solvedCookie = '';
+    ensureCookie();
+    r = req(url, options());
+    content = (r && r.content) ? r.content : '';
   }
   return content;
 }
@@ -310,15 +332,34 @@ let modern = null;
 if (typeof Spider === 'function') {
   modern = class KK extends Spider {
     async fetch(url) {
+      // 先确保cookie有效
+      if (!solvedCookie || (Date.now() - cookieTime) >= COOKIE_TTL) {
+        try {
+          var r0 = await this.net.req(HOST + '/', options());
+          var c0 = (r0 && r0.content) ? r0.content : '';
+          if (isChallenge(c0)) {
+            var ck0 = solveChallenge(c0);
+            if (ck0) { solvedCookie = ck0; cookieTime = Date.now(); }
+          } else if (c0 && c0.length > 1000) {
+            cookieTime = Date.now();
+          }
+        } catch (e) {}
+      }
       var r = await this.net.req(url, options());
       var content = (r && r.content) ? r.content : '';
-      if (isChallenge(content)) {
-        var ck = solveChallenge(content);
-        if (ck) {
-          solvedCookie = ck;
-          r = await this.net.req(url, options());
-          content = (r && r.content) ? r.content : '';
-        }
+      // 如果还是挑战页或空内容，重新解一次
+      if (isChallenge(content) || !content || content.length < 100) {
+        solvedCookie = '';
+        try {
+          var r1 = await this.net.req(HOST + '/', options());
+          var c1 = (r1 && r1.content) ? r1.content : '';
+          if (isChallenge(c1)) {
+            var ck1 = solveChallenge(c1);
+            if (ck1) { solvedCookie = ck1; cookieTime = Date.now(); }
+          }
+        } catch (e) {}
+        r = await this.net.req(url, options());
+        content = (r && r.content) ? r.content : '';
       }
       return content;
     }

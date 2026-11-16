@@ -16,8 +16,21 @@ const CLASSES = [
   { type_id: '126', type_name: '短剧' }
 ];
 
+// 站方海报地址里常带 HTML 实体（百度图床的 &amp;n=0&amp;g=0n），
+// 不还原的话 TVBox 拿 `&amp;` 去请求会被图床判 400，海报就是空白
+function unesc(s) {
+  return String(s)
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, h) => String.fromCharCode(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, d) => String.fromCharCode(parseInt(d, 10)))
+    .replace(/&quot;/g, '"')
+    .replace(/&nbsp;/g, '')
+    .replace(/&amp;/g, '&');
+}
+
 function absUrl(u) {
   if (!u) return '';
+  u = unesc(u.trim());
+  if (u.startsWith('//')) return 'https:' + u;
   if (u.startsWith('http')) return u;
   return HOST + u;
 }

@@ -5,11 +5,11 @@
     {
       "key": "aidi",
       "name": "爱迪影视",
-      "type": 1,
-      "api": "https://aidi.tv/api.php/provide/vod/",
+      "type": 3,
+      "api": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/aidi.js",
       "searchable": 1,
       "quickSearch": 1,
-      "filterable": 1
+      "filterable": 0
     },
     {
       "key": "ibao",

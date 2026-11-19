@@ -111,34 +111,48 @@ function playResult(id) {
   };
 }
 
+// 同步请求（legacy 接口用，req 由 JS 引擎注入）
+function get(url) {
+  const r = req(url, options());
+  return (r && r.content) ? r.content : '';
+}
+
 const legacy = {
   init() {},
   home() { return JSON.stringify({ class: CLASSES, filters: {} }); },
   homeVod() {
-    const d = apiJson('ac=detail&pg=1', get);
-    return JSON.stringify({ list: (d.list || []).map(mapVod) });
+    try {
+      const d = apiJson('ac=detail&pg=1', get);
+      return JSON.stringify({ list: (d.list || []).map(mapVod) });
+    } catch (e) { return JSON.stringify({ list: [] }); }
   },
   category(tid, pg) {
     const page = Number(pg) || 1;
-    const d = apiJson('ac=detail&t=' + tid + '&pg=' + page, get);
-    const list = (d.list || []).map(mapVod);
-    return JSON.stringify({
-      page: page,
-      pagecount: calcPage(d, Number(d.limit) || 20),
-      limit: Number(d.limit) || 20,
-      total: Number(d.total) || 0,
-      list: list
-    });
+    try {
+      const d = apiJson('ac=detail&t=' + tid + '&pg=' + page, get);
+      return JSON.stringify({
+        page: page,
+        pagecount: calcPage(d, Number(d.limit) || 20),
+        limit: Number(d.limit) || 20,
+        total: Number(d.total) || 0,
+        list: (d.list || []).map(mapVod)
+      });
+    } catch (e) {
+      return JSON.stringify({ page: page, pagecount: page, limit: 20, total: 0, list: [] });
+    }
   },
   detail(id) {
-    const first = String(id).split(',')[0];
-    const d = apiJson('ac=detail&ids=' + first, get);
-    const list = (d.list || []).map(buildDetail);
-    return JSON.stringify({ list: list });
+    try {
+      const first = String(id).split(',')[0];
+      const d = apiJson('ac=detail&ids=' + first, get);
+      return JSON.stringify({ list: (d.list || []).map(buildDetail) });
+    } catch (e) { return JSON.stringify({ list: [] }); }
   },
   search(key, quick, pg) {
-    const d = apiJson('ac=detail&wd=' + encodeURIComponent(key) + '&pg=' + (Number(pg) || 1), get);
-    return JSON.stringify({ list: (d.list || []).map(mapVod) });
+    try {
+      const d = apiJson('ac=detail&wd=' + encodeURIComponent(key) + '&pg=' + (Number(pg) || 1), get);
+      return JSON.stringify({ list: (d.list || []).map(mapVod) });
+    } catch (e) { return JSON.stringify({ list: [] }); }
   },
   play(flag, id) { return JSON.stringify(playResult(id)); }
 };

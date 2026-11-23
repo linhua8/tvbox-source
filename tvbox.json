@@ -3,6 +3,15 @@
   "wallpaper": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/04_jiguang.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/08_qingguang.jpg|https://raw.githubusercontent.com/linhua8/tvbox-source/main/wallpaper/11_senlin.jpg",
   "sites": [
     {
+      "key": "fdzys",
+      "name": "饭搭子影视",
+      "type": 3,
+      "api": "https://raw.githubusercontent.com/linhua8/tvbox-source/main/fdzys.js",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0
+    },
+    {
       "key": "ibao",
       "name": "小宝影院",
       "type": 3,

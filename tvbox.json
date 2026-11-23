@@ -39,46 +39,10 @@
       "changeable": 0
     },
     {
-      "key": "WexAiDuBoKu",
-      "name": "独播秒播",
-      "type": 3,
-      "api": "csp_WexAiDuBoKuGuard",
-      "searchable": 1,
-      "quickSearch": 1,
-      "changeable": 0
-    },
-    {
       "key": "WexAiWenCai",
       "name": "文才秒播",
       "type": 3,
       "api": "csp_WexAiWenCaiGuard",
-      "searchable": 1,
-      "quickSearch": 1,
-      "changeable": 0
-    },
-    {
-      "key": "WexFengYe4K",
-      "name": "小枫秒播",
-      "type": 3,
-      "api": "csp_WexFengYe4KGuard",
-      "searchable": 1,
-      "quickSearch": 1,
-      "changeable": 0
-    },
-    {
-      "key": "下饭",
-      "name": "下饭秒播",
-      "type": 3,
-      "api": "csp_WexAiJuXiaFanGuard",
-      "searchable": 1,
-      "quickSearch": 1,
-      "changeable": 0
-    },
-    {
-      "key": "WexAiReBo",
-      "name": "热播秒播",
-      "type": 3,
-      "api": "csp_WexAiReBoGuard",
       "searchable": 1,
       "quickSearch": 1,
       "changeable": 0

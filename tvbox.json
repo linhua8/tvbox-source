@@ -12,6 +12,15 @@
       "filterable": 0
     },
     {
+      "key": "gimytv",
+      "name": "Gimy剧迷",
+      "type": 1,
+      "api": "https://gimytv.biz/api.php/provide/vod/",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0
+    },
+    {
       "key": "fdzys",
       "name": "饭搭子影视",
       "type": 3,

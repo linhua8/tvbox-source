@@ -166,6 +166,32 @@ function parseDetail(id, html) {
     }
   }
 
+  // 兜底 2：新版 landing 详情页没有 playlist，只有“立即播放 /1”；
+  // 从“集数：N集 / 共N集 / 全N集 / 更新至第N集”取总集数，生成 /1../N 分集。
+  if (!Object.keys(groups).length) {
+    const playM = /<a[^>]+href="([^"]+)"[^>]*>[\s\S]{0,80}?立即播放/.exec(html) ||
+      /<a[^>]+href="([^"]*\/1(?:[?#][^"]*)?)"[^>]*>[\s\S]{0,120}?(?:立即播放|第\s*01?\s*集)/.exec(html);
+    if (playM) {
+      // 页面里的 href 是站内相对写法 /1，必须拼详情路径，不能拼 HOST 根
+      const base = url.replace(/\/$/, '');
+      const totalM = /集数[：:]\s*(\d+)\s*集/.exec(html) ||
+        /共\s*(\d+)\s*集/.exec(html) ||
+        /全\s*(\d+)\s*集/.exec(html) ||
+        /更新(?:至|到)?\s*第?\s*(\d+)\s*集/.exec(html);
+      let total = totalM ? parseInt(totalM[1], 10) : 1;
+      if (!total || total < 1) total = 1;
+      if (total > 200) total = 200;
+      groups['landing'] = [];
+      for (let n = 1; n <= total; n++) {
+        groups['landing'].push({
+          name: total === 1 ? '正片' : ('第' + (n < 10 ? '0' + n : n) + '集'),
+          url: base + '/' + n
+        });
+      }
+      tabNames['landing'] = '线路1';
+    }
+  }
+
   const playFrom = [];
   const playUrl = [];
   const order = Object.keys(tabNames);

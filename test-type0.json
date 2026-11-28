@@ -1,1 +1,0 @@
-{"sites":[{"key":"lziapi","name":"量子影音","type":0,"api":"http://cj.lziapi.com/api.php/provide/vod/?ac=detail","searchable":1,"quickSearch":1,"filterable":1},{"key":"bfzy","name":"暴风影音","type":0,"api":"https://bfzyapi.com/api.php/provide/vod/?ac=detail","searchable":1,"quickSearch":1,"filterable":1}],"parses":[],"lives":[]}
